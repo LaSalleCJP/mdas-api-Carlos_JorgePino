@@ -1,0 +1,7 @@
+server:
+  port: 9091
+  servlet:
+    context-path: /ms-ne-pokemon/v1
+   
+pokeapi:
+    url: https://pokeapi.co/api/v2
