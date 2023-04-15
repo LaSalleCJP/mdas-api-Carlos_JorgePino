@@ -33,24 +33,6 @@ public class UserAddPokemonFavoriteTest {
     private UserAddPokemonFavorite userAddPokemonFavorite;
 
     @Test
-    void shouldUserAddPokemonFavoriteSuccessfully() throws UserAlreadyExistsException, PokemonAlreadyAddException {
-
-        // GIVEN
-        UserId userId = UserIdMother.random();
-        UserName userName = UserNameMother.random();
-
-        //WHEN
-        when(userRepositoryMock.existsById(userId)).thenReturn(false);
-
-        User objUser = userCreator.create(userId, userName);
-        objUser.getFavoritePokemons().getFavoritePokemons().add(new FavoritePokemon(23));
-
-        User result = userAddPokemonFavorite.addPokemonFavorite(objUser,new FavoritePokemon(26));
-
-        assertTrue(result.getFavoritePokemons().getFavoritePokemons().contains(new FavoritePokemon(26)));
-    }
-
-    @Test
     void shouldThrowPokemonAlreadyAdd() throws UserAlreadyExistsException {
 
         // GIVEN

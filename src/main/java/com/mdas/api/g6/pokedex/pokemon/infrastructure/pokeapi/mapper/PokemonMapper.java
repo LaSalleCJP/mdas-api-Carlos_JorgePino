@@ -1,10 +1,7 @@
 package com.mdas.api.g6.pokedex.pokemon.infrastructure.pokeapi.mapper;
 
 import com.mdas.api.g6.pokedex.pokemon.domain.Pokemon;
-import com.mdas.api.g6.pokedex.pokemon.domain.valueobject.PokemonHeight;
-import com.mdas.api.g6.pokedex.pokemon.domain.valueobject.PokemonId;
-import com.mdas.api.g6.pokedex.pokemon.domain.valueobject.PokemonName;
-import com.mdas.api.g6.pokedex.pokemon.domain.valueobject.PokemonWeight;
+import com.mdas.api.g6.pokedex.pokemon.domain.valueobject.*;
 import com.mdas.api.g6.pokedex.pokemon.infrastructure.pokeapi.entity.PokemonApiEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,6 +13,7 @@ public interface PokemonMapper {
     @Mapping(target = "name", qualifiedByName = "mapPkName")
     @Mapping(target = "height", qualifiedByName = "mapPkHeight")
     @Mapping(target = "weight", qualifiedByName = "mapPkWeight")
+    @Mapping(target = "pokemonFavoritesCounter", ignore = true)
     Pokemon toDomain(PokemonApiEntity pokemonApiEntity);
 
     @Named("mapPkId")
@@ -37,6 +35,7 @@ public interface PokemonMapper {
     default PokemonWeight mapWeight(double weight) {
         return new PokemonWeight(weight);
     }
+
 }
 
 

@@ -21,4 +21,7 @@ public class PokemonApiEntity {
 
     @JsonProperty("weight")
     private double weight;
+
+    @JsonProperty("pokemonFavoritesCounter")
+    private Integer pokemonFavoritesCounter;
 }

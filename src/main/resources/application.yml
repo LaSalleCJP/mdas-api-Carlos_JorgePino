@@ -5,3 +5,15 @@ server:
    
 pokeapi:
     url: https://pokeapi.co/api/v2
+
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+sacavix:
+  queue:
+    name: cola2

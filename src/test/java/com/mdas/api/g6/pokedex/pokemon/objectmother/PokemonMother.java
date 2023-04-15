@@ -8,7 +8,8 @@ public class PokemonMother {
                 PokemonIdMother.random(),
                 PokemonNameMother.random(),
                 PokemonHeightMother.random(),
-                PokemonWeightMother.random()
+                PokemonWeightMother.random(),
+                PokemonFavoritesCounterMother.random()
         );
     }
 }

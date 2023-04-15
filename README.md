@@ -7,7 +7,28 @@ A simple Spring Boot application that interacts with the PokeAPI to retrieve inf
 * Curl
 * Jq (Not mandatory, just to beautify the curl response)
 ## Getting Started
-### Docker build
+
+### Docker build rabbit service
+```
+docker run -d --restart always --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
+```
+
+Open a Home Web Page Rabbit:
+
+```
+http://localhost:15672/
+user: guest
+pass: guest
+```
+
+Select on the menu the option "queue".
+Enter the name of the queue 
+```
+name: cola2
+```
+and then click create
+
+### Docker build back service
 This application can be built and executed using Docker. In order to do so, use the following commands:
 ```
 docker build -t mdas-api-g6:1.0.0 .
